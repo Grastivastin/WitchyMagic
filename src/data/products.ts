@@ -1,3 +1,8 @@
+import productSerum from "@/assets/product-serum.jpg";
+import productCleanser from "@/assets/product-cleanser.jpg";
+import productOil from "@/assets/product-oil.jpg";
+import productCream from "@/assets/product-cream.jpg";
+
 export type Product = {
   id: string;
   name: string;
@@ -7,6 +12,7 @@ export type Product = {
   reviews: number;
   glyph: string;
   gradient: string;
+  image?: string;
   concerns: string[];
   skinTypes: string[];
   ingredients: string[];
@@ -26,6 +32,9 @@ const G = {
   black: "linear-gradient(135deg, oklch(0.18 0.04 320 / 0.9), oklch(0.12 0.012 30 / 1))",
 };
 
+const IMG = { serum: productSerum, cleanser: productCleanser, oil: productOil, cream: productCream };
+
+
 export const products: Product[] = [
   {
     id: "moonlight-cleanser",
@@ -36,6 +45,7 @@ export const products: Product[] = [
     reviews: 342,
     glyph: "🌙",
     gradient: G.purple,
+    image: IMG.cleanser,
     concerns: ["dryness", "sensitivity", "barrier"],
     skinTypes: ["dry", "sensitive", "combination"],
     ingredients: ["Glycerin", "Panthenol (B5)", "Centella Asiatica", "Allantoin"],
@@ -55,6 +65,7 @@ export const products: Product[] = [
     reviews: 891,
     glyph: "🜏",
     gradient: G.pink,
+    image: IMG.serum,
     concerns: ["acne", "oiliness", "pores", "redness"],
     skinTypes: ["oily", "combination", "acne-prone"],
     ingredients: ["Niacinamide 10%", "Zinc PCA", "Hyaluronic Acid"],
@@ -74,6 +85,7 @@ export const products: Product[] = [
     reviews: 256,
     glyph: "✦",
     gradient: G.black,
+    image: IMG.oil,
     concerns: ["aging", "dryness", "barrier"],
     skinTypes: ["dry", "mature", "sensitive"],
     ingredients: ["Squalane", "Bakuchiol", "Rosehip Oil", "Vitamin E"],
@@ -92,6 +104,7 @@ export const products: Product[] = [
     reviews: 478,
     glyph: "🌹",
     gradient: G.rose,
+    image: IMG.serum,
     concerns: ["dryness", "dullness"],
     skinTypes: ["all"],
     ingredients: ["Damascus Rose Water", "Hyaluronic Acid", "Glycerin"],
@@ -129,6 +142,7 @@ export const products: Product[] = [
     reviews: 612,
     glyph: "☀",
     gradient: G.gold,
+    image: IMG.oil,
     concerns: ["pigmentation", "dullness", "aging"],
     skinTypes: ["all"],
     ingredients: ["L-Ascorbic Acid 15%", "Vitamin E", "Ferulic Acid"],
@@ -275,6 +289,7 @@ export const products: Product[] = [
     reviews: 421,
     glyph: "🔥",
     gradient: G.pink,
+    image: IMG.serum,
     concerns: ["aging", "fine-lines", "texture"],
     skinTypes: ["normal", "mature"],
     ingredients: ["Retinol 0.5%", "Squalane", "Centella", "Niacinamide"],
@@ -311,6 +326,7 @@ export const products: Product[] = [
     reviews: 504,
     glyph: "◑",
     gradient: G.purple,
+    image: IMG.cream,
     concerns: ["dryness", "barrier"],
     skinTypes: ["dry", "normal"],
     ingredients: ["Ceramides", "Hyaluronic Acid", "Squalane", "Niacinamide"],
@@ -401,6 +417,7 @@ export const products: Product[] = [
     reviews: 334,
     glyph: "☾",
     gradient: G.purple,
+    image: IMG.cream,
     concerns: ["dryness", "dullness", "barrier"],
     skinTypes: ["all"],
     ingredients: ["Snail Mucin", "Centella", "Hyaluronic Acid", "Niacinamide"],

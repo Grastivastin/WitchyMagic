@@ -7,7 +7,8 @@ import { ProductCard } from "@/components/ProductCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { products } from "@/data/products";
 import { testimonials } from "@/data/testimonials";
-import { Sparkles, FlaskConical, Moon, Star } from "lucide-react";
+import { Sparkles, FlaskConical, Moon, Star, ScanFace } from "lucide-react";
+import dermPortrait from "@/assets/derm-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -79,18 +80,58 @@ function HomePage() {
         </div>
       </section>
 
-      {/* BESTSELLERS */}
+      {/* HERO ELIXIRS — premium spotlight */}
       <section className="px-4 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle eyebrow="The Apothecary" title="Most-Conjured Potions" />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {bestSellers.map((p) => <ProductCard key={p.id} product={p} />)}
+          <div className="flex items-end justify-between flex-wrap gap-4">
+            <div>
+              <p className="font-display text-[10px] uppercase tracking-[0.5em] text-gold">✦ Featured ✦</p>
+              <h2 className="mt-2 font-display text-4xl md:text-5xl text-cream">Hero Elixirs</h2>
+            </div>
+            <Link to="/recommendations" className="font-body text-[11px] uppercase tracking-[0.3em] text-neon-pink hover:text-glow-pink">
+              Full Apothecary →
+            </Link>
           </div>
-          <div className="mt-12 text-center">
-            <NeonLink to="/recommendations" variant="outline">Browse the Full Apothecary →</NeonLink>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {bestSellers.map((p) => <ProductCard key={p.id} product={p} />)}
           </div>
         </div>
       </section>
+
+      {/* DERM-BACKED — realistic credibility */}
+      <section className="px-4 py-20 md:px-8">
+        <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-2 items-center">
+          <div className="tarot-border ornament-corners overflow-hidden rounded-sm">
+            <img
+              src={dermPortrait}
+              alt="Board-certified dermatologist examining a Witchy Magic skincare formulation in a clinical lab"
+              loading="lazy"
+              width={1280}
+              height={1280}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <p className="font-display text-[10px] uppercase tracking-[0.5em] text-neon-pink text-glow-pink">✦ Clinically Backed ✦</p>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl text-cream">
+              Formulated with <span className="italic text-neon-pink text-glow-pink">board-certified dermatologists.</span>
+            </h2>
+            <p className="mt-5 text-cream-dim leading-relaxed">
+              Every active is dosed at clinical strength. Every claim is sourced from peer-reviewed dermatology journals. The mysticism is for your soul — the science is for your skin.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm text-cream-dim">
+              <li>✦ Niacinamide 10% — proven sebum reduction</li>
+              <li>✦ Bakuchiol — retinol-equivalent collagen results</li>
+              <li>✦ Tranexamic Acid 3% — pigmentation gold standard</li>
+            </ul>
+            <div className="mt-8">
+              <NeonLink to="/grimoire" variant="outline">Read The Grimoire →</NeonLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BESTSELLERS — reuse same card grid removed; keep only Hero Elixirs above */}
 
       {/* CTA: ANALYSIS */}
       <section className="px-4 py-24 md:px-8">
@@ -102,8 +143,11 @@ function HomePage() {
           <p className="mt-4 text-cream-dim max-w-xl mx-auto">
             A 60-second ritual: answer the oracle, and receive your personalized formulary — clinically calibrated, mystically tuned.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <NeonLink to="/analysis" size="lg">Begin the Reading</NeonLink>
+            <NeonLink to="/scanner" variant="outline" size="lg">
+              <span className="inline-flex items-center gap-2"><ScanFace size={14}/> AR Face Scanner</span>
+            </NeonLink>
           </div>
         </div>
       </section>
@@ -116,8 +160,8 @@ function HomePage() {
             {featuredVoices.map((t) => <TestimonialCard key={t.id} t={t} />)}
           </div>
           <div className="mt-12 text-center">
-            <Link to="/gallery" className="font-body text-xs uppercase tracking-[0.3em] text-cream-dim hover:text-neon-pink">
-              See All Transformations →
+            <Link to="/reviews" className="font-body text-xs uppercase tracking-[0.3em] text-cream-dim hover:text-neon-pink">
+              See All Reviews →
             </Link>
           </div>
         </div>
