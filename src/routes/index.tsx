@@ -7,7 +7,8 @@ import { ProductCard } from "@/components/ProductCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { products } from "@/data/products";
 import { testimonials } from "@/data/testimonials";
-import { Sparkles, FlaskConical, Moon, Star } from "lucide-react";
+import { Sparkles, FlaskConical, Moon, Star, ScanFace } from "lucide-react";
+import dermPortrait from "@/assets/derm-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
