@@ -61,6 +61,13 @@ export function SiteFooter() {
           <p className="text-[10px] uppercase tracking-[0.3em] text-cream-dim/60">
             © {new Date().getFullYear()} Witchy Magic Boutique. All omens reserved.
           </p>
+          <p className="mt-4 max-w-2xl text-[10px] uppercase tracking-[0.25em] text-neon-pink/70 italic">
+            ✦ Demo Notice ✦ This is a demo / portfolio project. WITCHY MAGIC is a fictional brand —
+            all products, prices, reviews, dermatologists, and storybook imagery are for
+            demonstration purposes only and are not real. No purchases, bookings or medical
+            advice are actually processed. All artwork and references are used in a non-commercial,
+            illustrative capacity to convey design intent.
+          </p>
         </div>
       </div>
     </footer>

@@ -96,7 +96,7 @@ export function GlitterCursor() {
       <div
         ref={dotRef}
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[9999] hidden md:block"
+        className="pointer-events-none fixed left-0 top-0 z-[9999]"
         style={{
           width: 10,
           height: 10,

@@ -3,6 +3,8 @@ import { useMemo, useState } from "react";
 import { ingredients } from "@/data/ingredients";
 import { articles } from "@/data/articles";
 import { TarotCard } from "@/components/TarotCard";
+import princeAndPrincess from "@/assets/grimoire-prince-princess.jpg";
+import poisonApple from "@/assets/poison-apple-storybook.png";
 
 export const Route = createFileRoute("/grimoire")({
   head: () => ({
@@ -45,6 +47,38 @@ function GrimoirePage() {
           <p className="mt-4 text-cream-dim max-w-2xl mx-auto">
             Every active. Every paper cited. Every ritual explained.
           </p>
+        </div>
+
+        {/* Storybook hero — twisted dark fairytale */}
+        <div className="mt-12 grid gap-6 md:grid-cols-5 anim-fade-up">
+          <figure className="md:col-span-3 relative overflow-hidden rounded-sm tarot-border ornament-corners">
+            <img
+              src={princeAndPrincess}
+              alt="A dark prince and pale princess sharing a glowing potion in a moonlit gothic forest"
+              loading="lazy"
+              width={1920}
+              height={1080}
+              className="w-full h-full object-cover"
+            />
+            <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bg-black/95 to-transparent p-5">
+              <p className="font-display text-[10px] uppercase tracking-[0.4em] text-neon-pink text-glow-pink">Tale I</p>
+              <p className="mt-1 font-display text-xl text-cream italic">The Princess & Her Dark Prince</p>
+            </figcaption>
+          </figure>
+          <figure className="md:col-span-2 relative overflow-hidden rounded-sm tarot-border ornament-corners bg-bg-black/40">
+            <img
+              src={poisonApple}
+              alt="Vintage storybook page reading 'Poison Apple' in old Disney style"
+              loading="lazy"
+              width={800}
+              height={800}
+              className="w-full h-full object-contain"
+            />
+            <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bg-black/95 to-transparent p-5">
+              <p className="font-display text-[10px] uppercase tracking-[0.4em] text-gold">Tale II</p>
+              <p className="mt-1 font-display text-xl text-cream italic">The Poisoned Apple</p>
+            </figcaption>
+          </figure>
         </div>
 
         {/* TABS */}

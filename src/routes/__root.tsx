@@ -66,7 +66,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <div className="min-h-screen flex flex-col bg-radial-purple">
+    <div className="min-h-screen flex flex-col bg-mystic-swirl">
       <GlitterCursor />
       <SiteHeader />
       <main className="flex-1">
