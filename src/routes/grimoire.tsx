@@ -3,6 +3,8 @@ import { useMemo, useState } from "react";
 import { ingredients } from "@/data/ingredients";
 import { articles } from "@/data/articles";
 import { TarotCard } from "@/components/TarotCard";
+import princeAndPrincess from "@/assets/grimoire-prince-princess.jpg";
+import poisonApple from "@/assets/poison-apple-storybook.png";
 
 export const Route = createFileRoute("/grimoire")({
   head: () => ({
