@@ -47,7 +47,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
         <p className="text-xs text-cream-dim line-clamp-2">{product.keyIngredient}</p>
         <div className="flex flex-wrap gap-1">
-          {product.concerns.slice(0, 3).map((c) => (
+          {product.concerns.slice(0, 3).map((c: string) => (
             <span key={c} className="border border-gold/30 px-2 py-0.5 text-[9px] uppercase tracking-wider text-cream-dim">
               {c}
             </span>
