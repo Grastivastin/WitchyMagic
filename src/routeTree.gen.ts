@@ -10,12 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WishlistRouteImport } from './routes/wishlist'
+import { Route as ScannerRouteImport } from './routes/scanner'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RecommendationsRouteImport } from './routes/recommendations'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as IngredientsRouteImport } from './routes/ingredients'
 import { Route as GrimoireRouteImport } from './routes/grimoire'
-import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ConsultationRouteImport } from './routes/consultation'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as AnalysisRouteImport } from './routes/analysis'
@@ -28,6 +28,11 @@ import { Route as ApiChatRouteImport } from './routes/api/chat'
 const WishlistRoute = WishlistRouteImport.update({
   id: '/wishlist',
   path: '/wishlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScannerRoute = ScannerRouteImport.update({
+  id: '/scanner',
+  path: '/scanner',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReviewsRoute = ReviewsRouteImport.update({
@@ -53,11 +58,6 @@ const IngredientsRoute = IngredientsRouteImport.update({
 const GrimoireRoute = GrimoireRouteImport.update({
   id: '/grimoire',
   path: '/grimoire',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsultationRoute = ConsultationRouteImport.update({
@@ -107,12 +107,12 @@ export interface FileRoutesByFullPath {
   '/analysis': typeof AnalysisRoute
   '/cart': typeof CartRoute
   '/consultation': typeof ConsultationRoute
-  '/gallery': typeof GalleryRoute
   '/grimoire': typeof GrimoireRouteWithChildren
   '/ingredients': typeof IngredientsRoute
   '/profile': typeof ProfileRoute
   '/recommendations': typeof RecommendationsRoute
   '/reviews': typeof ReviewsRoute
+  '/scanner': typeof ScannerRoute
   '/wishlist': typeof WishlistRoute
   '/api/chat': typeof ApiChatRoute
   '/grimoire/$ingredientId': typeof GrimoireIngredientIdRoute
@@ -124,12 +124,12 @@ export interface FileRoutesByTo {
   '/analysis': typeof AnalysisRoute
   '/cart': typeof CartRoute
   '/consultation': typeof ConsultationRoute
-  '/gallery': typeof GalleryRoute
   '/grimoire': typeof GrimoireRouteWithChildren
   '/ingredients': typeof IngredientsRoute
   '/profile': typeof ProfileRoute
   '/recommendations': typeof RecommendationsRoute
   '/reviews': typeof ReviewsRoute
+  '/scanner': typeof ScannerRoute
   '/wishlist': typeof WishlistRoute
   '/api/chat': typeof ApiChatRoute
   '/grimoire/$ingredientId': typeof GrimoireIngredientIdRoute
@@ -142,12 +142,12 @@ export interface FileRoutesById {
   '/analysis': typeof AnalysisRoute
   '/cart': typeof CartRoute
   '/consultation': typeof ConsultationRoute
-  '/gallery': typeof GalleryRoute
   '/grimoire': typeof GrimoireRouteWithChildren
   '/ingredients': typeof IngredientsRoute
   '/profile': typeof ProfileRoute
   '/recommendations': typeof RecommendationsRoute
   '/reviews': typeof ReviewsRoute
+  '/scanner': typeof ScannerRoute
   '/wishlist': typeof WishlistRoute
   '/api/chat': typeof ApiChatRoute
   '/grimoire/$ingredientId': typeof GrimoireIngredientIdRoute
@@ -161,12 +161,12 @@ export interface FileRouteTypes {
     | '/analysis'
     | '/cart'
     | '/consultation'
-    | '/gallery'
     | '/grimoire'
     | '/ingredients'
     | '/profile'
     | '/recommendations'
     | '/reviews'
+    | '/scanner'
     | '/wishlist'
     | '/api/chat'
     | '/grimoire/$ingredientId'
@@ -178,12 +178,12 @@ export interface FileRouteTypes {
     | '/analysis'
     | '/cart'
     | '/consultation'
-    | '/gallery'
     | '/grimoire'
     | '/ingredients'
     | '/profile'
     | '/recommendations'
     | '/reviews'
+    | '/scanner'
     | '/wishlist'
     | '/api/chat'
     | '/grimoire/$ingredientId'
@@ -195,12 +195,12 @@ export interface FileRouteTypes {
     | '/analysis'
     | '/cart'
     | '/consultation'
-    | '/gallery'
     | '/grimoire'
     | '/ingredients'
     | '/profile'
     | '/recommendations'
     | '/reviews'
+    | '/scanner'
     | '/wishlist'
     | '/api/chat'
     | '/grimoire/$ingredientId'
@@ -213,12 +213,12 @@ export interface RootRouteChildren {
   AnalysisRoute: typeof AnalysisRoute
   CartRoute: typeof CartRoute
   ConsultationRoute: typeof ConsultationRoute
-  GalleryRoute: typeof GalleryRoute
   GrimoireRoute: typeof GrimoireRouteWithChildren
   IngredientsRoute: typeof IngredientsRoute
   ProfileRoute: typeof ProfileRoute
   RecommendationsRoute: typeof RecommendationsRoute
   ReviewsRoute: typeof ReviewsRoute
+  ScannerRoute: typeof ScannerRoute
   WishlistRoute: typeof WishlistRoute
   ApiChatRoute: typeof ApiChatRoute
   ProductsProductIdRoute: typeof ProductsProductIdRoute
@@ -231,6 +231,13 @@ declare module '@tanstack/react-router' {
       path: '/wishlist'
       fullPath: '/wishlist'
       preLoaderRoute: typeof WishlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scanner': {
+      id: '/scanner'
+      path: '/scanner'
+      fullPath: '/scanner'
+      preLoaderRoute: typeof ScannerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reviews': {
@@ -266,13 +273,6 @@ declare module '@tanstack/react-router' {
       path: '/grimoire'
       fullPath: '/grimoire'
       preLoaderRoute: typeof GrimoireRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/consultation': {
@@ -352,12 +352,12 @@ const rootRouteChildren: RootRouteChildren = {
   AnalysisRoute: AnalysisRoute,
   CartRoute: CartRoute,
   ConsultationRoute: ConsultationRoute,
-  GalleryRoute: GalleryRoute,
   GrimoireRoute: GrimoireRouteWithChildren,
   IngredientsRoute: IngredientsRoute,
   ProfileRoute: ProfileRoute,
   RecommendationsRoute: RecommendationsRoute,
   ReviewsRoute: ReviewsRoute,
+  ScannerRoute: ScannerRoute,
   WishlistRoute: WishlistRoute,
   ApiChatRoute: ApiChatRoute,
   ProductsProductIdRoute: ProductsProductIdRoute,
@@ -365,3 +365,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
