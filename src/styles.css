@@ -278,3 +278,9 @@
   background-size: 200% 100%;
   animation: shimmer 2s linear infinite;
 }
+
+@keyframes scan-sweep {
+  0%   { top: 14%; opacity: 0.2; }
+  50%  { top: 86%; opacity: 1; }
+  100% { top: 14%; opacity: 0.2; }
+}
