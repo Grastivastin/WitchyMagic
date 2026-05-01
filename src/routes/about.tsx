@@ -32,8 +32,18 @@ function AboutPage() {
           </p>
         </section>
 
-        <div className="mt-12">
-          <img src={aboutHero} alt="The witchy magic founder portrait — dramatic, candlelit, mystical" className="w-full rounded-sm border border-gold/30" />
+        <div className="mt-12 relative overflow-hidden rounded-sm tarot-border ornament-corners">
+          <img
+            src={aboutHero}
+            alt="The Witchy Magic coven gathered around a glowing cauldron in a moonlit gothic apothecary"
+            width={1920}
+            height={1088}
+            className="w-full"
+            style={{
+              maskImage: "linear-gradient(180deg, black 78%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(180deg, black 78%, transparent 100%)",
+            }}
+          />
         </div>
 
         {/* MANIFESTO */}
