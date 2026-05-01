@@ -7,18 +7,27 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="tarot-border ornament-corners group relative flex flex-col overflow-hidden rounded-sm transition-transform duration-300 hover:-translate-y-1">
       <Link to="/products/$productId" params={{ productId: product.id }} className="block">
         <div className="relative aspect-square overflow-hidden bg-deep-purple/40">
-          <div
-            className="h-full w-full transition-transform duration-500 group-hover:scale-105"
-            style={{
-              background: product.gradient,
-            }}
-          >
-            <div className="flex h-full w-full items-center justify-center p-8">
-              <span className="font-display text-5xl text-cream/80 text-glow-pink">
-                {product.glyph}
-              </span>
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={`${product.name} — luxury cosmetic product`}
+              loading="lazy"
+              width={1024}
+              height={1024}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div
+              className="h-full w-full transition-transform duration-500 group-hover:scale-105"
+              style={{ background: product.gradient }}
+            >
+              <div className="flex h-full w-full items-center justify-center p-8">
+                <span className="font-display text-5xl text-cream/80 text-glow-pink">
+                  {product.glyph}
+                </span>
+              </div>
             </div>
-          </div>
+          )}
           {product.dermatologistRecommended && (
             <span className="absolute left-2 top-2 border border-gold/60 bg-bg-black/80 px-2 py-1 text-[9px] uppercase tracking-[0.2em] text-gold">
               Derm Approved
