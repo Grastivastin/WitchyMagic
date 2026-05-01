@@ -65,7 +65,7 @@ function EntryPage() {
               <TarotCard>
                 <h3 className="font-display text-xl text-cream">Benefits</h3>
                 <ul className="mt-3 space-y-2 text-sm text-cream-dim">
-                  {ingredient.benefits.map((b) => <li key={b}>✦ {b}</li>)}
+                  {ingredient.benefits.map((b: string) => <li key={b}>✦ {b}</li>)}
                 </ul>
               </TarotCard>
               <TarotCard>
@@ -78,7 +78,7 @@ function EntryPage() {
             <section className="mt-10">
               <h2 className="font-display text-2xl text-cream">Found In</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {ingredient.productsContaining.map((pid) => {
+                {ingredient.productsContaining.map((pid: string) => {
                   const p = products.find((x) => x.id === pid);
                   if (!p) return null;
                   return (

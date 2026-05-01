@@ -87,7 +87,7 @@ function ProductDetail() {
               <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] text-cream-dim">Concerns</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
-                  {product.concerns.map((c) => (
+                  {product.concerns.map((c: string) => (
                     <span key={c} className="border border-gold/30 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cream-dim">{c}</span>
                   ))}
                 </div>
@@ -95,7 +95,7 @@ function ProductDetail() {
               <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] text-cream-dim">Skin types</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
-                  {product.skinTypes.map((c) => (
+                  {product.skinTypes.map((c: string) => (
                     <span key={c} className="border border-gold/30 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cream-dim">{c}</span>
                   ))}
                 </div>
@@ -116,7 +116,7 @@ function ProductDetail() {
             <h3 className="mt-2 font-display text-xl text-cream">{product.keyIngredient}</h3>
             <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-cream-dim">Full formulary</p>
             <ul className="mt-2 space-y-1 text-sm text-cream-dim">
-              {product.ingredients.map((ing) => <li key={ing}>· {ing}</li>)}
+              {product.ingredients.map((ing: string) => <li key={ing}>· {ing}</li>)}
             </ul>
           </TarotCard>
           <TarotCard>
@@ -124,7 +124,7 @@ function ProductDetail() {
             <h3 className="mt-2 font-display text-xl text-cream">{product.bestForZodiac ?? "All signs welcome"}</h3>
             <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-cream-dim">Benefits</p>
             <ul className="mt-2 space-y-1 text-sm text-cream-dim">
-              {product.benefits.map((b) => <li key={b}>✦ {b}</li>)}
+              {product.benefits.map((b: string) => <li key={b}>✦ {b}</li>)}
             </ul>
           </TarotCard>
         </section>
