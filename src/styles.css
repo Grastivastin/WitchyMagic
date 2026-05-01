@@ -150,6 +150,37 @@
       var(--color-bg-black);
   }
 
+  /* Mystical swirl texture — sits behind everything, blended dark so content stays legible */
+  .bg-mystic-swirl {
+    position: relative;
+    isolation: isolate;
+  }
+  .bg-mystic-swirl::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url("/src/assets/purple-swirl-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+    filter: blur(0.5px) saturate(0.85);
+    pointer-events: none;
+  }
+  .bg-mystic-swirl::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse at top, oklch(0.27 0.10 330 / 0.55), transparent 60%),
+      radial-gradient(ellipse at bottom, oklch(0.24 0.10 295 / 0.45), transparent 70%),
+      oklch(0.10 0.02 300 / 0.7);
+    pointer-events: none;
+  }
+
   .tarot-border {
     border: 1px solid oklch(0.74 0.10 80 / 0.5);
     background: linear-gradient(180deg, oklch(0.16 0.04 300 / 0.7), oklch(0.12 0.012 30 / 0.85));
