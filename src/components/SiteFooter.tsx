@@ -21,7 +21,7 @@ export function SiteFooter() {
             { to: "/analysis", label: "Skin Analysis" },
             { to: "/recommendations", label: "Apothecary" },
             { to: "/ingredients", label: "Ingredient Dictionary" },
-            { to: "/gallery", label: "Transformations" },
+            { to: "/scanner", label: "AR Face Scanner" },
           ]} />
 
           <FooterCol title="The Coven" links={[

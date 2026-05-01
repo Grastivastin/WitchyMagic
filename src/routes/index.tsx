@@ -160,8 +160,8 @@ function HomePage() {
             {featuredVoices.map((t) => <TestimonialCard key={t.id} t={t} />)}
           </div>
           <div className="mt-12 text-center">
-            <Link to="/gallery" className="font-body text-xs uppercase tracking-[0.3em] text-cream-dim hover:text-neon-pink">
-              See All Transformations →
+            <Link to="/reviews" className="font-body text-xs uppercase tracking-[0.3em] text-cream-dim hover:text-neon-pink">
+              See All Reviews →
             </Link>
           </div>
         </div>
