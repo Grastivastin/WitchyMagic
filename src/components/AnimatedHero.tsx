@@ -37,13 +37,13 @@ export function AnimatedHero() {
       >
         <img
           src={landingHero}
-          alt="Witchy Magic — A Premium Cosmetic Collection. Boutique & Beauty hero artwork with roses and gold lettering."
-          className="h-full w-full object-cover rounded-sm"
+          alt="Witchy Magic — dark fairytale sorceress in a moonlit gothic forest holding a glowing pink potion."
+          className="h-full w-full object-contain rounded-sm"
           style={{
             maskImage:
-              "radial-gradient(ellipse at center, black 70%, transparent 100%)",
+              "radial-gradient(ellipse at center, black 78%, transparent 100%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse at center, black 70%, transparent 100%)",
+              "radial-gradient(ellipse at center, black 78%, transparent 100%)",
           }}
         />
         {/* sparkle overlay */}
