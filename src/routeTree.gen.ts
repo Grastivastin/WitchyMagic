@@ -9,13 +9,91 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WishlistRouteImport } from './routes/wishlist'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as RecommendationsRouteImport } from './routes/recommendations'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as IngredientsRouteImport } from './routes/ingredients'
+import { Route as GrimoireRouteImport } from './routes/grimoire'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ConsultationRouteImport } from './routes/consultation'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as AnalysisRouteImport } from './routes/analysis'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsProductIdRouteImport } from './routes/products.$productId'
+import { Route as GrimoireIngredientIdRouteImport } from './routes/grimoire.$ingredientId'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
+const WishlistRoute = WishlistRouteImport.update({
+  id: '/wishlist',
+  path: '/wishlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecommendationsRoute = RecommendationsRouteImport.update({
+  id: '/recommendations',
+  path: '/recommendations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IngredientsRoute = IngredientsRouteImport.update({
+  id: '/ingredients',
+  path: '/ingredients',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrimoireRoute = GrimoireRouteImport.update({
+  id: '/grimoire',
+  path: '/grimoire',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultationRoute = ConsultationRouteImport.update({
+  id: '/consultation',
+  path: '/consultation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalysisRoute = AnalysisRouteImport.update({
+  id: '/analysis',
+  path: '/analysis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsProductIdRoute = ProductsProductIdRouteImport.update({
+  id: '/products/$productId',
+  path: '/products/$productId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrimoireIngredientIdRoute = GrimoireIngredientIdRouteImport.update({
+  id: '/$ingredientId',
+  path: '/$ingredientId',
+  getParentRoute: () => GrimoireRoute,
 } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
@@ -25,38 +103,226 @@ const ApiChatRoute = ApiChatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analysis': typeof AnalysisRoute
+  '/cart': typeof CartRoute
+  '/consultation': typeof ConsultationRoute
+  '/gallery': typeof GalleryRoute
+  '/grimoire': typeof GrimoireRouteWithChildren
+  '/ingredients': typeof IngredientsRoute
+  '/profile': typeof ProfileRoute
+  '/recommendations': typeof RecommendationsRoute
+  '/reviews': typeof ReviewsRoute
+  '/wishlist': typeof WishlistRoute
   '/api/chat': typeof ApiChatRoute
+  '/grimoire/$ingredientId': typeof GrimoireIngredientIdRoute
+  '/products/$productId': typeof ProductsProductIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analysis': typeof AnalysisRoute
+  '/cart': typeof CartRoute
+  '/consultation': typeof ConsultationRoute
+  '/gallery': typeof GalleryRoute
+  '/grimoire': typeof GrimoireRouteWithChildren
+  '/ingredients': typeof IngredientsRoute
+  '/profile': typeof ProfileRoute
+  '/recommendations': typeof RecommendationsRoute
+  '/reviews': typeof ReviewsRoute
+  '/wishlist': typeof WishlistRoute
   '/api/chat': typeof ApiChatRoute
+  '/grimoire/$ingredientId': typeof GrimoireIngredientIdRoute
+  '/products/$productId': typeof ProductsProductIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/analysis': typeof AnalysisRoute
+  '/cart': typeof CartRoute
+  '/consultation': typeof ConsultationRoute
+  '/gallery': typeof GalleryRoute
+  '/grimoire': typeof GrimoireRouteWithChildren
+  '/ingredients': typeof IngredientsRoute
+  '/profile': typeof ProfileRoute
+  '/recommendations': typeof RecommendationsRoute
+  '/reviews': typeof ReviewsRoute
+  '/wishlist': typeof WishlistRoute
   '/api/chat': typeof ApiChatRoute
+  '/grimoire/$ingredientId': typeof GrimoireIngredientIdRoute
+  '/products/$productId': typeof ProductsProductIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/chat'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/analysis'
+    | '/cart'
+    | '/consultation'
+    | '/gallery'
+    | '/grimoire'
+    | '/ingredients'
+    | '/profile'
+    | '/recommendations'
+    | '/reviews'
+    | '/wishlist'
+    | '/api/chat'
+    | '/grimoire/$ingredientId'
+    | '/products/$productId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/chat'
-  id: '__root__' | '/' | '/api/chat'
+  to:
+    | '/'
+    | '/about'
+    | '/analysis'
+    | '/cart'
+    | '/consultation'
+    | '/gallery'
+    | '/grimoire'
+    | '/ingredients'
+    | '/profile'
+    | '/recommendations'
+    | '/reviews'
+    | '/wishlist'
+    | '/api/chat'
+    | '/grimoire/$ingredientId'
+    | '/products/$productId'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/analysis'
+    | '/cart'
+    | '/consultation'
+    | '/gallery'
+    | '/grimoire'
+    | '/ingredients'
+    | '/profile'
+    | '/recommendations'
+    | '/reviews'
+    | '/wishlist'
+    | '/api/chat'
+    | '/grimoire/$ingredientId'
+    | '/products/$productId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AnalysisRoute: typeof AnalysisRoute
+  CartRoute: typeof CartRoute
+  ConsultationRoute: typeof ConsultationRoute
+  GalleryRoute: typeof GalleryRoute
+  GrimoireRoute: typeof GrimoireRouteWithChildren
+  IngredientsRoute: typeof IngredientsRoute
+  ProfileRoute: typeof ProfileRoute
+  RecommendationsRoute: typeof RecommendationsRoute
+  ReviewsRoute: typeof ReviewsRoute
+  WishlistRoute: typeof WishlistRoute
   ApiChatRoute: typeof ApiChatRoute
+  ProductsProductIdRoute: typeof ProductsProductIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wishlist': {
+      id: '/wishlist'
+      path: '/wishlist'
+      fullPath: '/wishlist'
+      preLoaderRoute: typeof WishlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recommendations': {
+      id: '/recommendations'
+      path: '/recommendations'
+      fullPath: '/recommendations'
+      preLoaderRoute: typeof RecommendationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ingredients': {
+      id: '/ingredients'
+      path: '/ingredients'
+      fullPath: '/ingredients'
+      preLoaderRoute: typeof IngredientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grimoire': {
+      id: '/grimoire'
+      path: '/grimoire'
+      fullPath: '/grimoire'
+      preLoaderRoute: typeof GrimoireRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consultation': {
+      id: '/consultation'
+      path: '/consultation'
+      fullPath: '/consultation'
+      preLoaderRoute: typeof ConsultationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analysis': {
+      id: '/analysis'
+      path: '/analysis'
+      fullPath: '/analysis'
+      preLoaderRoute: typeof AnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/products/$productId': {
+      id: '/products/$productId'
+      path: '/products/$productId'
+      fullPath: '/products/$productId'
+      preLoaderRoute: typeof ProductsProductIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grimoire/$ingredientId': {
+      id: '/grimoire/$ingredientId'
+      path: '/$ingredientId'
+      fullPath: '/grimoire/$ingredientId'
+      preLoaderRoute: typeof GrimoireIngredientIdRouteImport
+      parentRoute: typeof GrimoireRoute
     }
     '/api/chat': {
       id: '/api/chat'
@@ -68,9 +334,33 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface GrimoireRouteChildren {
+  GrimoireIngredientIdRoute: typeof GrimoireIngredientIdRoute
+}
+
+const GrimoireRouteChildren: GrimoireRouteChildren = {
+  GrimoireIngredientIdRoute: GrimoireIngredientIdRoute,
+}
+
+const GrimoireRouteWithChildren = GrimoireRoute._addFileChildren(
+  GrimoireRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AnalysisRoute: AnalysisRoute,
+  CartRoute: CartRoute,
+  ConsultationRoute: ConsultationRoute,
+  GalleryRoute: GalleryRoute,
+  GrimoireRoute: GrimoireRouteWithChildren,
+  IngredientsRoute: IngredientsRoute,
+  ProfileRoute: ProfileRoute,
+  RecommendationsRoute: RecommendationsRoute,
+  ReviewsRoute: ReviewsRoute,
+  WishlistRoute: WishlistRoute,
   ApiChatRoute: ApiChatRoute,
+  ProductsProductIdRoute: ProductsProductIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
