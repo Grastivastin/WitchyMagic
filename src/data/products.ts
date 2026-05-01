@@ -1,3 +1,8 @@
+import productSerum from "@/assets/product-serum.jpg";
+import productCleanser from "@/assets/product-cleanser.jpg";
+import productOil from "@/assets/product-oil.jpg";
+import productCream from "@/assets/product-cream.jpg";
+
 export type Product = {
   id: string;
   name: string;
@@ -7,6 +12,7 @@ export type Product = {
   reviews: number;
   glyph: string;
   gradient: string;
+  image?: string;
   concerns: string[];
   skinTypes: string[];
   ingredients: string[];
@@ -25,6 +31,9 @@ const G = {
   rose: "linear-gradient(135deg, oklch(0.74 0.22 350 / 0.55), oklch(0.24 0.10 295 / 0.85))",
   black: "linear-gradient(135deg, oklch(0.18 0.04 320 / 0.9), oklch(0.12 0.012 30 / 1))",
 };
+
+const IMG = { serum: productSerum, cleanser: productCleanser, oil: productOil, cream: productCream };
+
 
 export const products: Product[] = [
   {
