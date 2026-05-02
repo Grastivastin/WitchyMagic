@@ -1,8 +1,8 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect } from "react";
-import landingHero from "@/assets/landing-hero.png";
+import heroCover from "@/assets/hero-logo-cover.png";
 
-/** Home hero: image1 with breathing pink halo + parallax tilt + sparkle overlay */
+/** Home hero: storybook cover art with breathing pink halo, parallax tilt, sparkle overlay. */
 export function AnimatedHero() {
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -21,11 +21,11 @@ export function AnimatedHero() {
   }, [mx, my]);
 
   return (
-    <div className="relative mx-auto w-full max-w-[1100px] aspect-video">
+    <div className="relative mx-auto w-full max-w-[760px] aspect-square">
       {/* breathing halo */}
       <div
         aria-hidden
-        className="anim-halo absolute inset-0 -z-10 rounded-[40%] blur-3xl"
+        className="anim-halo absolute -inset-6 -z-10 rounded-[40%] blur-3xl"
         style={{
           background:
             "radial-gradient(ellipse at center, oklch(0.66 0.30 0 / 0.55), oklch(0.27 0.10 330 / 0.4) 40%, transparent 70%)",
@@ -33,21 +33,15 @@ export function AnimatedHero() {
       />
       <motion.div
         style={{ rotateX: rx, rotateY: ry, transformPerspective: 1200 }}
-        className="relative h-full w-full"
+        className="relative h-full w-full tarot-border ornament-corners rounded-sm overflow-hidden"
       >
         <img
-          src={landingHero}
-          alt="Witchy Magic — dark fairytale sorceress in a moonlit gothic forest holding a glowing pink potion."
-          className="h-full w-full object-contain rounded-sm"
-          style={{
-            maskImage:
-              "radial-gradient(ellipse at center, black 78%, transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse at center, black 78%, transparent 100%)",
-          }}
+          src={heroCover}
+          alt="Witchy Magic — A Premium Cosmetic Collection. Twisted dark fairytale boutique cover."
+          className="h-full w-full object-cover"
         />
         {/* sparkle overlay */}
-        <SparkleField count={12} />
+        <SparkleField count={14} />
       </motion.div>
     </div>
   );
