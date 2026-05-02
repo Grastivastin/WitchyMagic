@@ -3,7 +3,6 @@ import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { GlitterCursor } from "@/components/GlitterCursor";
-import { CornerOrnaments } from "@/components/CornerOrnaments";
 
 function NotFoundComponent() {
   return (
@@ -69,7 +68,6 @@ function RootComponent() {
   return (
     <div className="min-h-screen flex flex-col bg-mystic-swirl">
       <GlitterCursor />
-      <CornerOrnaments />
       <SiteHeader />
       <main className="flex-1">
         <Outlet />
