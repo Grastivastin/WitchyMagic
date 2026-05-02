@@ -101,7 +101,7 @@ function HomePage() {
       {/* DERM-BACKED — realistic credibility */}
       <section className="px-4 py-20 md:px-8">
         <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-2 items-center">
-          <div className="tarot-border ornament-corners overflow-hidden rounded-sm">
+          <div className="tarot-border rose-thorn-border overflow-hidden rounded-sm">
             <img
               src={dermPortrait}
               alt="Board-certified dermatologist examining a Witchy Magic skincare formulation in a clinical lab"
