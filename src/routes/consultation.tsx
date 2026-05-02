@@ -4,7 +4,7 @@ import { experts } from "@/data/team";
 import { TarotCard } from "@/components/TarotCard";
 import { NeonButton } from "@/components/NeonButton";
 import { Star, Calendar, Video, ShieldCheck } from "lucide-react";
-import princessPrince from "@/assets/princess-prince.png";
+import consultationDermatologist from "@/assets/consultation-dermatologist.jpg";
 
 export const Route = createFileRoute("/consultation")({
   head: () => ({
@@ -32,18 +32,18 @@ function ConsultationPage() {
           </p>
         </div>
 
-        {/* Storybook plate — The Princess & Her Dark Prince */}
-        <figure className="mt-12 mx-auto max-w-xl relative overflow-hidden rounded-sm tarot-border ornament-corners anim-fade-up">
+        {/* Consultation dermatologist portrait */}
+        <figure className="mt-12 mx-auto max-w-3xl relative overflow-hidden rounded-sm tarot-border rose-thorn-border anim-fade-up">
           <img
-            src={princessPrince}
-            alt="A pale princess and her dark prince sharing a glowing potion in a moonlit forest"
-            width={900}
-            height={600}
+            src={consultationDermatologist}
+            alt="Dermatologist for Witchy Magic consultations in a refined rose-framed clinic portrait"
+            width={1433}
+            height={1433}
             className="w-full h-auto block"
           />
           <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bg-black/95 to-transparent p-5 text-center">
-            <p className="font-display text-[10px] uppercase tracking-[0.4em] text-neon-pink text-glow-pink">A Private Audience</p>
-            <p className="mt-1 font-display text-xl text-cream italic">Book your consultation with the coven</p>
+            <p className="font-display text-[10px] uppercase tracking-[0.4em] text-neon-pink text-glow-pink">Clinical Beauty Ritual</p>
+            <p className="mt-1 font-display text-xl text-cream italic">Book your consultation with a dermatologist</p>
           </figcaption>
         </figure>
 
