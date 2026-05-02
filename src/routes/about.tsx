@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TarotCard } from "@/components/TarotCard";
 import { team } from "@/data/team";
-import aboutHero from "@/assets/about-hero.jpg";
+import aboutHero from "@/assets/about-cover.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -32,19 +32,15 @@ function AboutPage() {
           </p>
         </section>
 
-        <div className="mt-12 relative overflow-hidden rounded-sm tarot-border ornament-corners">
+        <figure className="mt-12 mx-auto max-w-md md:max-w-lg relative overflow-hidden rounded-sm tarot-border ornament-corners">
           <img
             src={aboutHero}
-            alt="The Witchy Magic coven gathered around a glowing cauldron in a moonlit gothic apothecary"
-            width={1920}
-            height={1088}
-            className="w-full"
-            style={{
-              maskImage: "linear-gradient(180deg, black 78%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(180deg, black 78%, transparent 100%)",
-            }}
+            alt="Witchy Magic — A Premium Cosmetic Collection storybook plate"
+            width={1080}
+            height={1080}
+            className="w-full h-auto block"
           />
-        </div>
+        </figure>
 
         {/* MANIFESTO */}
         <section className="mt-20">

@@ -1,7 +1,5 @@
 import { Link } from "@tanstack/react-router";
 
-const ZODIAC = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
-
 export function SiteFooter() {
   return (
     <footer className="relative border-t border-gold/20 bg-bg-black/80 py-16 mt-24">
@@ -50,11 +48,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div aria-hidden className="mt-12 flex justify-center gap-3 text-gold/60 text-lg">
-          {ZODIAC.map((g) => <span key={g}>{g}</span>)}
-        </div>
-
-        <div className="mt-8 flex flex-col items-center gap-2 border-t border-gold/10 pt-8 text-center">
+        <div className="mt-12 flex flex-col items-center gap-2 border-t border-gold/10 pt-8 text-center">
           <p className="text-[10px] uppercase tracking-[0.4em] text-cream-dim">
             ✦ dermatologist tested · cruelty-free · clean beauty certified ✦
           </p>
