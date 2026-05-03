@@ -78,7 +78,7 @@ export function TrustBadges() {
                 {label}
               </span>
             </div>
-            {idx < BADGES.length - 1 && <ThornDivider />}
+            {idx < BADGES.length - 1 && <RoseGlyph />}
           </div>
         ))}
       </div>
