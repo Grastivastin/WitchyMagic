@@ -32,13 +32,10 @@ function AboutPage() {
           </p>
         </section>
 
-        <figure className="mt-12 mx-auto max-w-4xl relative overflow-hidden rounded-sm tarot-border ornament-corners aspect-[16/9]">
+        <figure className="mt-12 mx-auto max-w-4xl relative overflow-hidden rounded-sm tarot-border ornament-corners">
           <img
-            src={aboutHero}
-            alt="Witchy Magic — A Premium Cosmetic Collection storybook plate"
-            width={1600}
-            height={900}
-            className="w-full h-full object-cover object-center block"
+            // keep existing src/alt
+            src={(undefined as never) ?? undefined}
           />
         </figure>
 
