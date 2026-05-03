@@ -38,7 +38,7 @@ export function AnimatedHero() {
         <img
           src={heroCover}
           alt="Witchy Magic — A Premium Cosmetic Collection. Twisted dark fairytale boutique cover."
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-contain object-center"
         />
         {/* sparkle overlay */}
         <SparkleField count={14} />
