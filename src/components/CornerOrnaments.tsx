@@ -9,7 +9,7 @@ export function CornerOrnaments() {
       <img src={corner} alt="" className={`${base} top-0 left-0`} />
       <img src={corner} alt="" className={`${base} top-0 right-0 -scale-x-100`} />
       <img src={corner} alt="" className={`${base} bottom-0 left-0 -scale-y-100`} />
-      <img src={corner} alt="" className={`${base} bottom-0 right-0 -scale-100`} />
+      <img src={corner} alt="" className={`${base} bottom-0 right-0 -scale-x-100 -scale-y-100`} />
     </div>
   );
 }
