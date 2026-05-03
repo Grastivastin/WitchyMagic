@@ -8,57 +8,50 @@ const BADGES = [
   { icon: Award, label: "Best Beauty Innovation 2025" },
 ];
 
-/** Thorny rose divider — small SVG sprig used between badges */
-function ThornDivider() {
+/** Rose glyph divider — small gold-and-pink rose between badges */
+function RoseGlyph() {
   return (
     <svg
       aria-hidden
-      width="28"
-      height="14"
-      viewBox="0 0 28 14"
-      className="text-neon-pink/80 shrink-0"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      className="shrink-0 text-gold"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.2"
+      strokeWidth="1"
     >
-      <path d="M2 7 Q 7 1, 14 7 T 26 7" />
-      <path d="M5 7 l -2 -3" />
-      <path d="M9 5 l 1 -3" />
-      <path d="M19 5 l 1 -3" />
-      <path d="M23 7 l 2 -3" />
-      <circle cx="14" cy="7" r="1.6" fill="currentColor" />
+      <circle cx="9" cy="9" r="3.4" fill="oklch(0.66 0.30 0 / 0.7)" stroke="currentColor" />
+      <circle cx="9" cy="9" r="1.6" fill="oklch(0.93 0.04 85)" stroke="none" />
+      <path d="M2 14 l 3 -1 M16 14 l -3 -1" />
     </svg>
+  );
+}
+
+/** Straight gold rule with rose accents — clean horizontal border */
+function GoldRule({ flip = false }: { flip?: boolean }) {
+  return (
+    <div className={`absolute left-0 right-0 ${flip ? "bottom-0" : "top-0"} flex items-center gap-3 px-2`}>
+      <span className="h-px flex-1 bg-gradient-to-r from-transparent via-gold/70 to-gold/80" />
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden className="text-gold">
+        <circle cx="7" cy="7" r="2.6" fill="currentColor" opacity="0.85" />
+        <circle cx="7" cy="7" r="1.1" fill="oklch(0.66 0.30 0 / 0.85)" />
+      </svg>
+      <span className="h-px flex-1 bg-gold/80" />
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden className="text-gold">
+        <circle cx="7" cy="7" r="2.6" fill="currentColor" opacity="0.85" />
+        <circle cx="7" cy="7" r="1.1" fill="oklch(0.66 0.30 0 / 0.85)" />
+      </svg>
+      <span className="h-px flex-1 bg-gradient-to-l from-transparent via-gold/70 to-gold/80" />
+    </div>
   );
 }
 
 export function TrustBadges() {
   return (
     <div className="relative py-10">
-      {/* thorny vine top border */}
-      <svg
-        aria-hidden
-        viewBox="0 0 1200 12"
-        preserveAspectRatio="none"
-        className="absolute top-0 left-0 w-full h-3 text-gold/70"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.2"
-      >
-        <path d="M0 6 Q 100 0, 200 6 T 400 6 T 600 6 T 800 6 T 1000 6 T 1200 6" />
-        <path d="M150 6 l -6 -5 M250 6 l 6 -5 M450 6 l -6 -5 M550 6 l 6 -5 M750 6 l -6 -5 M850 6 l 6 -5 M1050 6 l -6 -5" />
-      </svg>
-      <svg
-        aria-hidden
-        viewBox="0 0 1200 12"
-        preserveAspectRatio="none"
-        className="absolute bottom-0 left-0 w-full h-3 text-gold/70 rotate-180"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.2"
-      >
-        <path d="M0 6 Q 100 0, 200 6 T 400 6 T 600 6 T 800 6 T 1000 6 T 1200 6" />
-        <path d="M150 6 l -6 -5 M250 6 l 6 -5 M450 6 l -6 -5 M550 6 l 6 -5 M750 6 l -6 -5 M850 6 l 6 -5 M1050 6 l -6 -5" />
-      </svg>
+      <GoldRule />
+      <GoldRule flip />
 
       <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-4">
         {BADGES.map(({ icon: Icon, label }, idx) => (
@@ -78,7 +71,7 @@ export function TrustBadges() {
                 {label}
               </span>
             </div>
-            {idx < BADGES.length - 1 && <ThornDivider />}
+            {idx < BADGES.length - 1 && <RoseGlyph />}
           </div>
         ))}
       </div>

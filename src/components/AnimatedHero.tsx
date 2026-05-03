@@ -21,7 +21,7 @@ export function AnimatedHero() {
   }, [mx, my]);
 
   return (
-    <div className="relative mx-auto w-full max-w-[760px] aspect-square">
+    <div className="relative mx-auto w-full max-w-[1100px] aspect-[16/10]">
       {/* breathing halo */}
       <div
         aria-hidden
@@ -38,7 +38,7 @@ export function AnimatedHero() {
         <img
           src={heroCover}
           alt="Witchy Magic — A Premium Cosmetic Collection. Twisted dark fairytale boutique cover."
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-center"
         />
         {/* sparkle overlay */}
         <SparkleField count={14} />
