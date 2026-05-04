@@ -21,7 +21,7 @@ export function AnimatedHero() {
   }, [mx, my]);
 
   return (
-    <div className="relative mx-auto w-full max-w-[1100px] aspect-[16/10]">
+    <div className="relative mx-auto w-full max-w-[900px] aspect-square">
       {/* breathing halo */}
       <div
         aria-hidden
@@ -41,7 +41,7 @@ export function AnimatedHero() {
           className="h-full w-full object-contain object-center"
         />
         {/* sparkle overlay */}
-        <SparkleField count={14} />
+        <SparkleField count={6} />
       </motion.div>
     </div>
   );
