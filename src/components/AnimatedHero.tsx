@@ -21,7 +21,7 @@ export function AnimatedHero() {
   }, [mx, my]);
 
   return (
-    <div className="relative mx-auto w-full max-w-[1100px] aspect-[16/10]">
+    <div className="relative mx-auto w-full max-w-[900px] aspect-square rose-frame">
       {/* breathing halo */}
       <div
         aria-hidden
@@ -33,15 +33,14 @@ export function AnimatedHero() {
       />
       <motion.div
         style={{ rotateX: rx, rotateY: ry, transformPerspective: 1200 }}
-        className="relative h-full w-full tarot-border ornament-corners rounded-sm overflow-hidden"
+        className="relative h-full w-full tarot-border rounded-sm overflow-hidden"
       >
         <img
           src={heroCover}
           alt="Witchy Magic — A Premium Cosmetic Collection. Twisted dark fairytale boutique cover."
           className="h-full w-full object-contain object-center"
         />
-        {/* sparkle overlay */}
-        <SparkleField count={14} />
+        <SparkleField count={6} />
       </motion.div>
     </div>
   );

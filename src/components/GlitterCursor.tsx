@@ -6,8 +6,8 @@ type Particle = {
 };
 
 const COLORS = ["#ff1493", "#ff69b4", "#f0e8d8", "#c9a96e"];
-const MAX_PARTICLES = 60;
-const LIFE_MS = 800;
+const MAX_PARTICLES = 18;
+const LIFE_MS = 700;
 
 export function GlitterCursor() {
   const dotRef = useRef<HTMLDivElement | null>(null);
@@ -35,7 +35,7 @@ export function GlitterCursor() {
       dot.style.transform = `translate(${mouseX - 5}px, ${mouseY - 5}px) scale(${scaleUp ? 2 : 1})`;
 
       const now = performance.now();
-      if (now - lastSpawn < 32) return;
+      if (now - lastSpawn < 80) return;
       lastSpawn = now;
 
       if (particlesRef.current.length >= MAX_PARTICLES) return;
