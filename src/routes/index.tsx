@@ -28,27 +28,23 @@ function HomePage() {
 
   return (
     <div className="overflow-hidden">
-      {/* HERO */}
-      <section className="relative px-4 py-16 md:py-24 lg:py-32 md:px-8">
-        <div className="mx-auto max-w-7xl text-center">
-          <p className="font-display text-xs uppercase tracking-[0.5em] text-neon-pink text-glow-pink mb-6">
-            ✦ A Premium Cosmetic Collection ✦
-          </p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-cream leading-[0.95] tracking-tight">
-            Witchy <span className="italic text-neon-pink text-glow-pink">Magic</span>
-          </h1>
-          <p className="mt-6 max-w-xl mx-auto text-base md:text-lg text-cream-dim leading-relaxed">
-            Where peer-reviewed dermatology meets ancient ritual.
-            <br className="hidden md:block" />
-            Skincare written in the language of the cosmos.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <NeonLink to="/analysis" size="lg">Begin Your Analysis</NeonLink>
-            <NeonLink to="/recommendations" variant="outline" size="lg">Meet The Oracle</NeonLink>
-          </div>
-
-          <div className="mt-16">
-            <AnimatedHero />
+      {/* HERO — full-bleed storybook cover */}
+      <section className="relative">
+        <AnimatedHero />
+        <div className="relative px-4 md:px-8 -mt-8 md:-mt-16 pb-16 md:pb-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="font-display text-xs uppercase tracking-[0.5em] text-neon-pink text-glow-pink mb-4">
+              ✦ A Premium Cosmetic Collection ✦
+            </p>
+            <p className="mt-4 max-w-xl mx-auto text-base md:text-lg text-cream-dim leading-relaxed">
+              Where peer-reviewed dermatology meets ancient ritual.
+              <br className="hidden md:block" />
+              Skincare written in the language of the cosmos.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <NeonLink to="/analysis" size="lg">Begin Your Analysis</NeonLink>
+              <NeonLink to="/recommendations" variant="outline" size="lg">Meet The Oracle</NeonLink>
+            </div>
           </div>
         </div>
       </section>
