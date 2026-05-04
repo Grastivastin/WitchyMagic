@@ -1,77 +1,49 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import heroCover from "@/assets/hero-logo-cover.png";
 
-/** Home hero: storybook cover art with breathing pink halo, parallax tilt, sparkle overlay. */
+/** Home hero: full-bleed storybook cover artwork that blends seamlessly into the page background. */
 export function AnimatedHero() {
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const rx = useSpring(useTransform(my, [-1, 1], [2, -2]), { stiffness: 80, damping: 18 });
-  const ry = useSpring(useTransform(mx, [-1, 1], [-2, 2]), { stiffness: 80, damping: 18 });
-
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      mx.set((e.clientX / w) * 2 - 1);
-      my.set((e.clientY / h) * 2 - 1);
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, [mx, my]);
-
   return (
-    <div className="relative mx-auto w-full max-w-[900px] aspect-square rose-frame">
-      {/* breathing halo */}
-      <div
-        aria-hidden
-        className="anim-halo absolute -inset-6 -z-10 rounded-[40%] blur-3xl"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, oklch(0.66 0.30 0 / 0.55), oklch(0.27 0.10 330 / 0.4) 40%, transparent 70%)",
-        }}
-      />
+    <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <motion.div
-        style={{ rotateX: rx, rotateY: ry, transformPerspective: 1200 }}
-        className="relative h-full w-full tarot-border rounded-sm overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="relative w-full"
       >
         <img
           src={heroCover}
-          alt="Witchy Magic — A Premium Cosmetic Collection. Twisted dark fairytale boutique cover."
-          className="h-full w-full object-contain object-center"
+          alt="Witchy Magic Boutique & Beauty — twisted dark fairytale cover."
+          className="w-full h-auto block select-none"
+          draggable={false}
         />
-        <SparkleField count={6} />
-      </motion.div>
-    </div>
-  );
-}
-
-function SparkleField({ count }: { count: number }) {
-  const sparkles = Array.from({ length: count }, (_, i) => ({
-    id: i,
-    top: 10 + Math.random() * 80,
-    left: 10 + Math.random() * 80,
-    delay: Math.random() * 4,
-    size: 2 + Math.random() * 3,
-    color: i % 3 === 0 ? "#f0e8d8" : i % 3 === 1 ? "#ff1493" : "#ff69b4",
-  }));
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0">
-      {sparkles.map((s) => (
-        <span
-          key={s.id}
-          className="anim-twinkle absolute rounded-full"
+        {/* Bottom blend into page background so it bleeds perfectly when scrolling */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 md:h-56"
           style={{
-            top: `${s.top}%`,
-            left: `${s.left}%`,
-            width: s.size,
-            height: s.size,
-            background: s.color,
-            boxShadow: `0 0 8px ${s.color}`,
-            animationDelay: `${s.delay}s`,
+            background:
+              "linear-gradient(to bottom, transparent 0%, oklch(0.12 0.04 320 / 0.75) 60%, oklch(0.08 0.03 320) 100%)",
           }}
         />
-      ))}
+        {/* Side blends so the artwork edges fade into the side borders */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40"
+          style={{
+            background:
+              "linear-gradient(to right, oklch(0.08 0.03 320) 0%, transparent 100%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40"
+          style={{
+            background:
+              "linear-gradient(to left, oklch(0.08 0.03 320) 0%, transparent 100%)",
+          }}
+        />
+      </motion.div>
     </div>
   );
 }
