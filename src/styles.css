@@ -237,7 +237,7 @@
     position: absolute;
     width: 90px;
     height: 90px;
-    background-image: url("/src/assets/corner-ornament.png");
+    background-image: url("./assets/corner-ornament.png");
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
