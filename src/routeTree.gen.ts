@@ -14,6 +14,7 @@ import { Route as ScannerRouteImport } from './routes/scanner'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RecommendationsRouteImport } from './routes/recommendations'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as MirrorRouteImport } from './routes/mirror'
 import { Route as IngredientsRouteImport } from './routes/ingredients'
 import { Route as GrimoireRouteImport } from './routes/grimoire'
 import { Route as ConsultationRouteImport } from './routes/consultation'
@@ -48,6 +49,11 @@ const RecommendationsRoute = RecommendationsRouteImport.update({
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MirrorRoute = MirrorRouteImport.update({
+  id: '/mirror',
+  path: '/mirror',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IngredientsRoute = IngredientsRouteImport.update({
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/consultation': typeof ConsultationRoute
   '/grimoire': typeof GrimoireRouteWithChildren
   '/ingredients': typeof IngredientsRoute
+  '/mirror': typeof MirrorRoute
   '/profile': typeof ProfileRoute
   '/recommendations': typeof RecommendationsRoute
   '/reviews': typeof ReviewsRoute
@@ -126,6 +133,7 @@ export interface FileRoutesByTo {
   '/consultation': typeof ConsultationRoute
   '/grimoire': typeof GrimoireRouteWithChildren
   '/ingredients': typeof IngredientsRoute
+  '/mirror': typeof MirrorRoute
   '/profile': typeof ProfileRoute
   '/recommendations': typeof RecommendationsRoute
   '/reviews': typeof ReviewsRoute
@@ -144,6 +152,7 @@ export interface FileRoutesById {
   '/consultation': typeof ConsultationRoute
   '/grimoire': typeof GrimoireRouteWithChildren
   '/ingredients': typeof IngredientsRoute
+  '/mirror': typeof MirrorRoute
   '/profile': typeof ProfileRoute
   '/recommendations': typeof RecommendationsRoute
   '/reviews': typeof ReviewsRoute
@@ -163,6 +172,7 @@ export interface FileRouteTypes {
     | '/consultation'
     | '/grimoire'
     | '/ingredients'
+    | '/mirror'
     | '/profile'
     | '/recommendations'
     | '/reviews'
@@ -180,6 +190,7 @@ export interface FileRouteTypes {
     | '/consultation'
     | '/grimoire'
     | '/ingredients'
+    | '/mirror'
     | '/profile'
     | '/recommendations'
     | '/reviews'
@@ -197,6 +208,7 @@ export interface FileRouteTypes {
     | '/consultation'
     | '/grimoire'
     | '/ingredients'
+    | '/mirror'
     | '/profile'
     | '/recommendations'
     | '/reviews'
@@ -215,6 +227,7 @@ export interface RootRouteChildren {
   ConsultationRoute: typeof ConsultationRoute
   GrimoireRoute: typeof GrimoireRouteWithChildren
   IngredientsRoute: typeof IngredientsRoute
+  MirrorRoute: typeof MirrorRoute
   ProfileRoute: typeof ProfileRoute
   RecommendationsRoute: typeof RecommendationsRoute
   ReviewsRoute: typeof ReviewsRoute
@@ -259,6 +272,13 @@ declare module '@tanstack/react-router' {
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mirror': {
+      id: '/mirror'
+      path: '/mirror'
+      fullPath: '/mirror'
+      preLoaderRoute: typeof MirrorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ingredients': {
@@ -354,6 +374,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConsultationRoute: ConsultationRoute,
   GrimoireRoute: GrimoireRouteWithChildren,
   IngredientsRoute: IngredientsRoute,
+  MirrorRoute: MirrorRoute,
   ProfileRoute: ProfileRoute,
   RecommendationsRoute: RecommendationsRoute,
   ReviewsRoute: ReviewsRoute,
@@ -365,12 +386,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

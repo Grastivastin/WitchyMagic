@@ -5,8 +5,7 @@ import { useState } from "react";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/analysis", label: "Analysis" },
-  { to: "/scanner", label: "AR Scanner" },
+  { to: "/mirror", label: "Mirror" },
   { to: "/recommendations", label: "Apothecary" },
   { to: "/grimoire", label: "Grimoire" },
   { to: "/consultation", label: "Consult" },
@@ -44,12 +43,12 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-10 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="font-body text-[11px] uppercase tracking-[0.3em] text-cream-dim transition-colors hover:text-neon-pink"
+              className="font-body text-[13px] uppercase tracking-[0.3em] text-cream-dim transition-colors hover:text-neon-pink"
               activeProps={{ className: "text-neon-pink text-glow-pink" }}
               activeOptions={{ exact: item.to === "/" }}
             >
@@ -58,7 +57,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 pl-6 lg:pl-10 lg:border-l lg:border-gold/30 lg:ml-2">
           <Link to="/wishlist" aria-label="Wishlist" className="text-cream-dim hover:text-neon-pink transition-colors">
             <Heart size={18} />
           </Link>

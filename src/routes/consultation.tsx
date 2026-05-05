@@ -33,7 +33,7 @@ function ConsultationPage() {
         </div>
 
         {/* Consultation dermatologist portrait */}
-        <figure className="mt-12 mx-auto max-w-2xl relative rounded-sm tarot-border rose-frame anim-fade-up bg-deep-purple/30 p-3">
+        <figure className="mt-12 mx-auto max-w-2xl relative rounded-sm anim-fade-up bg-deep-purple/20 p-1">
           <img
             src={consultationDermatologist}
             alt="Dermatologist for Witchy Magic consultations in a refined rose-framed clinic portrait"
