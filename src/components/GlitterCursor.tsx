@@ -85,13 +85,8 @@ export function GlitterCursor() {
       const interactive = t.closest("a, button, [role='button'], input, textarea, select, label");
       scaleUp = !!interactive;
       dot.style.boxShadow = scaleUp
-        ? "0 0 20px #ff1493, 0 0 36px #ff69b4"
-        : "0 0 12px #ff1493, 0 0 24px #ff69b4";
-    };
-
-      dot.style.boxShadow = scaleUp
-          ? "0 0 24px #ff1493, 0 0 48px #ff69b4, 0 0 72px #ffd700"
-          : "0 0 18px #ff1493, 0 0 36px #ff69b4, 0 0 60px #ff85c1";
+        ? "0 0 24px #ff1493, 0 0 48px #ff69b4, 0 0 72px #ffd700"
+        : "0 0 18px #ff1493, 0 0 36px #ff69b4, 0 0 60px #ff85c1";
     };
 
     window.addEventListener("mousemove", onMove, { passive: true });
