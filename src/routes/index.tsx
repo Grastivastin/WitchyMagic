@@ -97,7 +97,7 @@ function HomePage() {
       {/* DERM-BACKED — realistic credibility */}
       <section className="px-4 py-20 md:px-8">
         <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-2 items-center">
-          <div className="tarot-border rose-frame rounded-sm bg-deep-purple/30 p-3">
+          <div className="rounded-sm bg-deep-purple/20 p-1">
             <img
               src={dermPortrait}
               alt="Half-dermatologist, half-witch portrait — Witchy Magic"

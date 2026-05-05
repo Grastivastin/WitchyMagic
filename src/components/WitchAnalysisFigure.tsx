@@ -12,7 +12,7 @@ export function WitchAnalysisFigure() {
             "radial-gradient(ellipse at center, oklch(0.66 0.30 0 / 0.35), oklch(0.27 0.10 330 / 0.28) 50%, transparent 75%)",
         }}
       />
-      <figure className="relative tarot-border ornament-corners rounded-sm overflow-hidden bg-deep-purple/30 p-2">
+      <figure className="relative rounded-sm overflow-hidden bg-deep-purple/30 p-1">
         <img
           src={witchImg}
           alt="Mystical zodiac witch holding a glowing pink crystal ball, surrounded by zodiac symbols"
