@@ -42,7 +42,7 @@ function ProductDetail() {
 
         <div className="mt-8 grid gap-12 lg:grid-cols-2">
           {/* IMAGE */}
-          <div className="tarot-border ornament-corners rounded-sm overflow-hidden">
+          <div className="rounded-sm overflow-hidden border border-gold/20">
             <div
               className="relative aspect-square flex items-center justify-center"
               style={{ background: product.gradient }}

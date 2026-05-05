@@ -86,7 +86,7 @@ function GrimoirePage() {
             <circle cx="50" cy="25" r="3" fill="currentColor" />
             <circle cx="35" cy="42" r="2" fill="currentColor" />
           </svg>
-          <figure className="relative max-w-2xl w-full overflow-hidden rounded-sm tarot-border rose-frame bg-bg-black/40">
+          <figure className="relative max-w-2xl w-full overflow-hidden rounded-sm bg-bg-black/40">
             <img
               src={poisonApple}
               alt="Vintage storybook page reading 'Poison Apple' in old Disney style"
