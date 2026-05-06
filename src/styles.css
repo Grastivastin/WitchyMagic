@@ -48,37 +48,37 @@
 :root {
   --radius: 0.5rem;
 
-  /* Brand palette (oklch approximations of hex spec) */
-  --bg-black: oklch(0.12 0.012 30);          /* #0a0806 */
-  --deep-purple: oklch(0.24 0.10 295);       /* #2a1a4a */
-  --dark-purple: oklch(0.27 0.10 330);       /* #3d1a3d */
-  --neon-pink: oklch(0.66 0.30 0);           /* #ff1493 */
-  --magenta-soft: oklch(0.74 0.22 350);      /* #ff69b4 */
-  --magenta-solid: oklch(0.59 0.22 0);       /* #d9376f */
-  --gold: oklch(0.74 0.10 80);               /* #c9a96e */
-  --rose-gold: oklch(0.77 0.09 60);          /* #d4a574 */
-  --cream: oklch(0.93 0.04 85);              /* #f0e8d8 */
-  --cream-dim: oklch(0.65 0.03 80);          /* #9a8f7e */
+  /* Brand palette — bright, airy boutique (blush, cream, rose-gold) */
+  --bg-black: oklch(0.985 0.008 80);         /* warm cream-white */
+  --deep-purple: oklch(0.92 0.04 350);       /* soft blush */
+  --dark-purple: oklch(0.86 0.06 350);       /* dusty rose */
+  --neon-pink: oklch(0.66 0.18 0);           /* vivid rose-pink */
+  --magenta-soft: oklch(0.80 0.12 0);        /* soft pink */
+  --magenta-solid: oklch(0.62 0.18 350);     /* magenta */
+  --gold: oklch(0.72 0.11 75);               /* champagne gold */
+  --rose-gold: oklch(0.78 0.09 50);          /* rose gold */
+  --cream: oklch(0.28 0.04 340);             /* deep mauve text */
+  --cream-dim: oklch(0.50 0.03 340);         /* muted mauve */
 
   /* Map shadcn semantic tokens to brand */
   --background: var(--bg-black);
   --foreground: var(--cream);
-  --card: oklch(0.16 0.03 300);
+  --card: oklch(0.97 0.02 340);
   --card-foreground: var(--cream);
-  --popover: oklch(0.16 0.03 300);
+  --popover: oklch(0.98 0.015 340);
   --popover-foreground: var(--cream);
   --primary: var(--neon-pink);
-  --primary-foreground: var(--cream);
+  --primary-foreground: oklch(0.99 0.005 80);
   --secondary: var(--deep-purple);
   --secondary-foreground: var(--cream);
-  --muted: oklch(0.20 0.04 300);
+  --muted: oklch(0.95 0.02 340);
   --muted-foreground: var(--cream-dim);
   --accent: var(--gold);
-  --accent-foreground: var(--bg-black);
+  --accent-foreground: oklch(0.99 0.005 80);
   --destructive: oklch(0.60 0.22 25);
-  --destructive-foreground: var(--cream);
-  --border: oklch(0.30 0.05 320 / 0.4);
-  --input: oklch(0.25 0.05 310);
+  --destructive-foreground: oklch(0.99 0.005 80);
+  --border: oklch(0.72 0.06 350 / 0.35);
+  --input: oklch(0.94 0.02 340);
   --ring: var(--neon-pink);
 }
 

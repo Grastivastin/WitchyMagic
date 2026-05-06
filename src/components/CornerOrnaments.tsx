@@ -1,22 +1,39 @@
-import sideBorder from "@/assets/side-border.png";
+import cornerOrnament from "@/assets/corner-ornament.png";
 
-/** Slim golden rose-vine ribbons hugging the left and right edges of every page. */
+/** Four delicate gold rose-vine corner ornaments framing every page like a storybook. */
 export function CornerOrnaments() {
   const base =
-    "pointer-events-none fixed inset-y-0 z-40 select-none w-[22px] sm:w-[28px] md:w-[34px] lg:w-[40px] opacity-90";
-  const style = {
-    backgroundImage: `url(${sideBorder})`,
-    backgroundRepeat: "repeat-y" as const,
-    backgroundSize: "100% auto",
-    backgroundPosition: "center top",
-    filter: "drop-shadow(0 0 6px oklch(0.78 0.10 80 / 0.45))",
-  };
+    "pointer-events-none fixed z-40 select-none w-[70px] sm:w-[90px] md:w-[120px] lg:w-[140px] h-auto opacity-85";
+  const filter = "drop-shadow(0 0 6px oklch(0.78 0.10 80 / 0.35))";
   return (
     <div aria-hidden className="contents">
-      <div className={`${base} left-0`} style={style} />
-      <div
-        className={`${base} right-0`}
-        style={{ ...style, transform: "scaleX(-1)" }}
+      {/* top-left */}
+      <img
+        src={cornerOrnament}
+        alt=""
+        className={`${base} top-0 left-0`}
+        style={{ filter }}
+      />
+      {/* top-right */}
+      <img
+        src={cornerOrnament}
+        alt=""
+        className={`${base} top-0 right-0`}
+        style={{ filter, transform: "scaleX(-1)" }}
+      />
+      {/* bottom-left */}
+      <img
+        src={cornerOrnament}
+        alt=""
+        className={`${base} bottom-0 left-0`}
+        style={{ filter, transform: "scaleY(-1)" }}
+      />
+      {/* bottom-right */}
+      <img
+        src={cornerOrnament}
+        alt=""
+        className={`${base} bottom-0 right-0`}
+        style={{ filter, transform: "scale(-1, -1)" }}
       />
     </div>
   );
