@@ -23,7 +23,7 @@ export function AnimatedHero() {
           className="pointer-events-none absolute inset-x-0 bottom-0 h-40 md:h-56"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 0%, oklch(0.97 0.02 340 / 0.6) 60%, oklch(0.985 0.008 80) 100%)",
+              "linear-gradient(to bottom, transparent 0%, oklch(0.12 0.04 320 / 0.75) 60%, oklch(0.08 0.03 320) 100%)",
           }}
         />
       </motion.div>
