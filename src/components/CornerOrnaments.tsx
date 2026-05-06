@@ -1,20 +1,22 @@
 import sideBorder from "@/assets/side-border.png";
 
-/** Fixed full-height golden rose vine borders down the left and right edges of every page. */
+/** Slim golden rose-vine ribbons hugging the left and right edges of every page. */
 export function CornerOrnaments() {
+  const base =
+    "pointer-events-none fixed inset-y-0 z-40 select-none w-[22px] sm:w-[28px] md:w-[34px] lg:w-[40px] opacity-90";
+  const style = {
+    backgroundImage: `url(${sideBorder})`,
+    backgroundRepeat: "repeat-y" as const,
+    backgroundSize: "100% auto",
+    backgroundPosition: "center top",
+    filter: "drop-shadow(0 0 6px oklch(0.78 0.10 80 / 0.45))",
+  };
   return (
     <div aria-hidden className="contents">
-      <img
-        src={sideBorder}
-        alt=""
-        className="pointer-events-none fixed top-0 left-0 z-40 select-none h-screen w-[70px] sm:w-[90px] md:w-[120px] lg:w-[150px] object-cover opacity-95 drop-shadow-[0_0_18px_oklch(0.74_0.10_80_/_0.55)]"
-        style={{ objectPosition: "center center" }}
-      />
-      <img
-        src={sideBorder}
-        alt=""
-        className="pointer-events-none fixed top-0 right-0 z-40 select-none h-screen w-[70px] sm:w-[90px] md:w-[120px] lg:w-[150px] object-cover opacity-95 drop-shadow-[0_0_18px_oklch(0.74_0.10_80_/_0.55)]"
-        style={{ objectPosition: "center center", transform: "scaleX(-1)" }}
+      <div className={`${base} left-0`} style={style} />
+      <div
+        className={`${base} right-0`}
+        style={{ ...style, transform: "scaleX(-1)" }}
       />
     </div>
   );
